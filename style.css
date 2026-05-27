@@ -1,39 +1,59 @@
 body {
-    background: #f7e7c1;
+    margin: 0;
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
+    background: #1a1a1a;
+    color: white;
+}
+
+.game {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #222, #111);
+}
+
+.right {
+    width: 350px;
+    background: #2b2b2b;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 #cookie {
-    width: 200px;
+    width: 300px;
     cursor: pointer;
     transition: transform 0.1s;
 }
 
 #cookie:active {
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
-#game {
-    background: #fff3d4;
-    padding: 20px;
-    width: 300px;
-    margin: auto;
+.shop-item {
+    background: #3a3a3a;
+    padding: 15px;
+    margin-bottom: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 10px #c9a86a;
-}
-
-button {
-    padding: 10px 20px;
-    background: #d4a373;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    color: white;
-    font-size: 16px;
+    transition: 0.2s;
 }
 
-button:hover {
-    background: #b5835a;
+.shop-item:hover {
+    background: #4a4a4a;
+}
+
+.shop-item h3 {
+    margin: 0;
+}
+
+.shop-item p {
+    margin: 5px 0 0;
+    color: #ccc;
 }

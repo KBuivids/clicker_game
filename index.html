@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-    <meta charset="UTF-8">
-    <title>Ulmaņu cepumu spiedējs</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Jurija spiedējs</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Ulmaņu cepumu spiedējs</h1>
+<div class="game">
+    <div class="left">
+        <h1>Jurija spiedējs</h1>
 
-    <div id="game">
-        <img id="cookie" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Karlis_Ulmanis.jpg" alt="Cookie">
-        <p>Tautas cepumi: <span id="counter">0</span></p>
+        <h2 id="score">0 Jurija monētas</h2>
+        <p id="cps">0 sekundē</p>
 
-        <button id="upgrade">Pirkt uzlabojumu (cena: <span id="cost">50</span>)</button>
-        <p>Uzlabojumu skaits: <span id="upgrades">0</span></p>
+        <img src="c:\Users\a250804kb\Downloads\ezcropper-edited-image.png" id="cookie" alt="smuks kudrins">
+
     </div>
 
-    <script src="script.js"></script>
+    <div class="right">
+        <h2>Piederumi</h2>
+
+        <div id="shop"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
