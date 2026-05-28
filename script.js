@@ -8,34 +8,46 @@ const shop = document.getElementById("shop");
 
 const upgrades = [
     {
-        name: "Crimping Tool",
+        name: "Personal Area Network",
         cost: 50,
-        power: 1
+        power: 1,
+        image: "PAN.png"
     },
     {
-        name: "RJ-45 Connectors",
+        name: "Local Area Network​",
         cost: 200,
-        power: 5
+        power: 5,
+        image: "LAN.png"
     },
     {
-        name: "Jack",
+        name: "Campus Area Network​",
         cost: 1000,
-        power: 20
+        power: 20,
+        image: "CAN.png"
     },
     {
-        name: "Optiskā Šķiedra",
+        name: "Metropolian Area Network​",
         cost: 5000,
-        power: 100
+        power: 100,
+        image: "MAN.png"
     },
     {
-        name: "Switch",
+        name: "Wide Area Network",
         cost: 20000,
-        power: 500
+        power: 500,
+        image: "WAN.png"
     },
     {
-        name: "Server Rack",
+        name: "Global Area Network​",
         cost: 100000,
-        power: 2000
+        power: 2000,
+        image: "GAN.png"
+    },
+    {
+        name: "World Wide Web​",
+        cost: 1000000,
+        power: 20000,
+        image: "WWW.png"
     }
 ];
 
@@ -45,45 +57,61 @@ cookie.addEventListener("click", () => {
 });
 
 function updateUI() {
-    scoreEl.innerText = Math.floor(score) + " Bald Coins";
-    cpsEl.innerText = cps + " per second";
+    scoreEl.innerText = Math.floor(score) + " Jurija odekaloni";
+    cpsEl.innerText = cps + " sekundē";
 }
 
 function createShop() {
+
     upgrades.forEach(upgrade => {
+
         const item = document.createElement("div");
         item.className = "shop-item";
 
-        item.innerHTML = `
-            <h3>${upgrade.name}</h3>
-            <p>Cost: ${upgrade.cost}</p>
-            <p>+${upgrade.power} cps</p>
-        `;
+        function render() {
+            item.innerHTML = `
+                <div class="upgrade">
+
+                    <img src="${upgrade.image}" class="upgrade-img">
+
+                    <div>
+                        <h3>${upgrade.name}</h3>
+                        <p>Cena: ${upgrade.cost}</p>
+                        <p>+${upgrade.power} sekundē</p>
+                    </div>
+
+                </div>
+            `;
+        }
+
+        render();
 
         item.addEventListener("click", () => {
+
             if(score >= upgrade.cost) {
+
                 score -= upgrade.cost;
                 cps += upgrade.power;
 
                 upgrade.cost = Math.floor(upgrade.cost * 1.5);
 
-                item.innerHTML = `
-                    <h3>${upgrade.name}</h3>
-                    <p>Cost: ${upgrade.cost}</p>
-                    <p>+${upgrade.power} cps</p>
-                `;
-
+                render();
                 updateUI();
             }
+
         });
 
         shop.appendChild(item);
+
     });
+
 }
 
 setInterval(() => {
+
     score += cps;
     updateUI();
+
 }, 1000);
 
 createShop();

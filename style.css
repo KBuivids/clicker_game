@@ -32,6 +32,10 @@ body {
     transition: transform 0.1s;
 }
 
+#cookie:hover {
+    transform: scale(1.03);
+}
+
 #cookie:active {
     transform: scale(0.95);
 }
@@ -47,6 +51,21 @@ body {
 
 .shop-item:hover {
     background: #4a4a4a;
+}
+
+.upgrade {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.upgrade-img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    background: #222;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .shop-item h3 {
