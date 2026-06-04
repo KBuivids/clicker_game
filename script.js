@@ -48,6 +48,12 @@ const upgrades = [
         cost: 1000000,
         power: 20000,
         image: "WWW.png"
+    },
+    {
+        name: "Kudrina / Igora bildītes​",
+        cost: 50000000,
+        power: 0,
+        image: "leaks.png"
     }
 ];
 
@@ -92,6 +98,9 @@ function createShop() {
 
                 score -= upgrade.cost;
                 cps += upgrade.power;
+                if (upgrade.name === "Kudrina / Igora bildītes​") {
+                    document.getElementById("secretReward").style.display = "block";
+                }
 
                 upgrade.cost = Math.floor(upgrade.cost * 1.5);
 
